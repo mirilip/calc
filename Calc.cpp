@@ -47,7 +47,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			100, 100, 100, 50, hWnd, (HMENU)18, nullptr, nullptr);
 		HWND erase = CreateWindow("button", "C", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
 			0, 100, 100, 50, hWnd, (HMENU)19, nullptr, nullptr);
-		HWND buttonbin = CreateWindow("button", "Bin", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+		HWND buttonbin = CreateWindow("button", "bin", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
 			400, 100, 100, 50, hWnd, (HMENU)20, nullptr, nullptr);
 		HWND bitOr = CreateWindow("button", "OR", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
 			400, 150, 100, 50, hWnd, (HMENU)21, nullptr, nullptr);
@@ -63,9 +63,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			500, 250, 100, 50, hWnd, (HMENU)26, nullptr, nullptr);
 		HWND factorial = CreateWindow("button", "!", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
 			500, 200, 100, 50, hWnd, (HMENU)27, nullptr, nullptr);
-		HWND cos = CreateWindow("button", "cos", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+		HWND cos = CreateWindow("button", "oct", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
 			500, 150, 100, 50, hWnd, (HMENU)28, nullptr, nullptr);
-		HWND sin = CreateWindow("button", "sin", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+		HWND sin = CreateWindow("button", "hex", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
 			500, 100, 100, 50, hWnd, (HMENU)29, nullptr, nullptr);
 		hWnda = CreateWindowEx(WS_EX_CLIENTEDGE, TEXT("STATIC"), buf1, WS_CHILD | WS_VISIBLE | SS_RIGHT, 0, 37, 600, 65, hWnd, HMENU(nullptr), GetModuleHandle(nullptr), nullptr);
 		hWnda1 = CreateWindowEx(0, TEXT("EDIT"), nullptr, WS_CHILD | WS_VISIBLE | SS_RIGHT, 40, 0, 560, 37, hWnd, (HMENU) ID_EDITCHILD, (HINSTANCE)GetWindowLong(hWnd, GWL_HINSTANCE), nullptr);
@@ -266,12 +266,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		}
 		case 28:{
 			sign1 = true;
-			coss = true;
+			octa = true;
 			break;
 			}
 		case 29:{
 			sign1 = true;
-			sinn = true;
+			hexa = true;
 			break;
 			}
 		}
@@ -302,10 +302,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			{
 				sum1 = atof(buffer1.c_str());
 			}
-			if (sinn)
-				c.Sinus(sum1);
-			if (coss)
-				c.Cosinus(sum1);
+			if (hexa)
+				c.Hexa(sum1);
+			if (octa)
+				c.Octa(sum1);
 			if (fact)
 				c.Factorial(sum1);
 			if (proc)

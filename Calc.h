@@ -13,8 +13,8 @@ char buff1[20], buff2[20];
 LPCSTR buf1 = "\0";
 char buff[128];
 std::string buffer1, buffer2, str, str1;
-bool bin = false, orr = false, xxor = false, nott = false, annd = false, point = false, shiftl = false, shiftr = false, sinn = false;
-bool sign = false, sub = false, mul = false, divis = false, add = false, sign1 = false, proc = false, fact = false, integer = false, coss = false;
+bool bin = false, orr = false, xxor = false, nott = false, annd = false, point = false, shiftl = false, shiftr = false, octa = false;
+bool sign = false, sub = false, mul = false, divis = false, add = false, sign1 = false, proc = false, fact = false, integer = false, hexa = false;
 class calculator
 {
 public:
@@ -53,17 +53,15 @@ public:
 		sprintf_s(buff, "%0.5lf", eq);
 		proc = false;
 	}
-	void Cosinus(double sum1) const
+	void Octa(int sum1) const
 	{
-		const double eq = cos(sum1);
-		sprintf_s(buff, "%0.5lf", eq);
-		coss = false;
+		_itoa_s(sum1, buff, 8);
+		octa = false;
 	}
-	void Sinus(double sum1) const
+	void Hexa(int sum1) const
 	{
-		const double eq = sin(sum1);
-		sprintf_s(buff, "%0.5lf", eq);
-		sinn = false;
+		_itoa_s(sum1, buff, 16);
+		hexa = false;
 	}
 	void BitOr(int sum1, int sum2) const
 	{
